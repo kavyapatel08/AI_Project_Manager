@@ -21,7 +21,7 @@ app = FastAPI(title="Mini AI Project Manager")
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://ai-project-manager-six.vercel.app/", "http://localhost:5173"],
+    allow_origins=["https://ai-project-manager-six.vercel.app", "http://localhost:5173"],
     allow_methods=["GET", "POST", "PUT", "DELETE"],
     allow_headers=["Content-Type"],
 )
