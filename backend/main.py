@@ -19,13 +19,9 @@ models.Base.metadata.create_all(bind=engine)
 
 app = FastAPI(title="Mini AI Project Manager")
 
-ALLOWED_ORIGINS = os.getenv(
-    "ALLOWED_ORIGINS", "http://localhost:5173"
-).split(",")
-
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=ALLOWED_ORIGINS,
+    allow_origins=["https://ai-project-manager-six.vercel.app/", "http://localhost:5173"],
     allow_methods=["GET", "POST", "PUT", "DELETE"],
     allow_headers=["Content-Type"],
 )
