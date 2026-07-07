@@ -145,6 +145,12 @@ mini-ai-pm/
 
 ---
 
+## 🌐 Deployment
+ 
+- **Backend:** Deployed on [Railway](https://aiprojectmanager-production.up.railway.app/)
+- **Frontend:** Deployed on [Vercel](https://ai-project-manager-six.vercel.app/)
+
+
 ## 📄 License
 
 This project is for educational/demo purposes.
