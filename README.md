@@ -1,4 +1,4 @@
-# 🧠 Mini AI Project Manager
+# 🧠 Mini AI Project Manager - E2M Practical Assessment
 
 Turn unstructured meeting notes into structured, trackable tasks — automatically extracting **owners**, **due dates**, and **priority** using an LLM.
 
@@ -35,7 +35,7 @@ This started as a fast prototype, so these were added deliberately once the core
 | **Prompt injection defense** | 3 layers: (1) a pre-filter regex blocks known jailbreak/injection phrasing before it reaches the LLM, (2) the prompt explicitly instructs the model to treat notes as untrusted data and reject instructions disguised as tasks, (3) a post-filter drops any suspicious task/owner that still slips through |
 | **Input validation** | Notes are capped at a max length before being sent to the LLM; all extracted fields are type- and shape-checked before being saved to the database |
 | **Environment-based config** | API URLs and secrets are read from environment variables, never hardcoded — safe to deploy across environments |
-| **Safe date handling** | Relative dates ("Friday", "next week") are resolved via a precomputed date lookup table in Python rather than trusting the LLM to do date math |
+
 
 ---
 
