@@ -37,14 +37,12 @@ This started as a fast prototype, so these were added deliberately once the core
 | **Environment-based config** | API URLs and secrets are read from environment variables, never hardcoded — safe to deploy across environments |
 | **Safe date handling** | Relative dates ("Friday", "next week") are resolved via a precomputed date lookup table in Python rather than trusting the LLM to do date math |
 
-> ⚠️ **Note:** This project does not yet include user authentication/authorization — anyone with API access can read/edit/delete tasks. Not recommended for multi-user production use without adding an auth layer.
-
 ---
 
 ## 🛠️ Tech Stack
 
 - **Backend:** FastAPI, SQLAlchemy, SQLite, Groq API
-- **Frontend:** React (Vite), Tailwind CSS, Axios
+- **Frontend:** React (Vite), Tailwind CSS
 - **LLM:** Groq `llama-3.1-8b-instant`
 
 ---
@@ -54,8 +52,8 @@ This started as a fast prototype, so these were added deliberately once the core
 ### 1. Clone the repo
 
 ```bash
-git clone https://github.com/<your-username>/mini-ai-project-manager.git
-cd mini-ai-project-manager
+git clone https://github.com/kavyapatel08/AI_Project_Manager.git
+cd AI_Project_Manager
 ```
 
 ### 2. Backend setup
@@ -69,7 +67,6 @@ Create a `.env` file in `backend/`:
 
 ```env
 GROQ_API_KEY=your_groq_api_key_here
-ALLOWED_ORIGINS=http://localhost:5173
 ```
 
 Run the backend:
@@ -145,15 +142,6 @@ mini-ai-pm/
 | `PUT` | `/tasks/{id}` | Update a task |
 | `DELETE` | `/tasks/{id}` | Delete a task |
 | `GET` | `/tasks/export` | Export all tasks as CSV |
-
----
-
-## 🌐 Deployment
-
-- **Backend:** Deployed on [Railway](https://railway.app)
-- **Frontend:** Deployed on [Vercel](https://vercel.com)
-
-Make sure `ALLOWED_ORIGINS` on the backend matches your deployed frontend URL exactly (no trailing slash), and `VITE_API_BASE` on the frontend points to your deployed backend URL.
 
 ---
 
